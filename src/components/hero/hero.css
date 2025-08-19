@@ -1,0 +1,252 @@
+/* ================================
+   Hero Section Styling - Reduced Spacing
+================================== */
+.hero-container {
+  position: relative;
+  text-align: center;
+  padding: 1rem 1rem 2rem;
+  margin-top: -4rem;
+  padding-top: 5rem;
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  overflow: hidden;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================================
+   Text Highlights
+================================== */
+.highlight {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* ================================
+   Tagline Styling
+================================== */
+.tagline {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: var(--color-light);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ================================
+   Type Animation Positioning
+================================== */
+.type-animation {
+  margin: 1.5rem 0 1rem 0;
+  text-align: center;
+}
+
+/* ================================
+   Image Styling (Optional)
+================================== */
+.hero-img {
+  margin-top: 3rem;
+  width: 20rem;
+  height: 28rem;
+  background: linear-gradient(var(--color-light), transparent);
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+}
+
+/* ================================
+   Social Icons (Left Bottom)
+================================== */
+.header__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+  z-index: 2;
+}
+
+.header__socials::after {
+  content: '';
+  width: 1px;
+  height: 2rem;
+  background: var(--color-primary);
+}
+
+/* ================================
+   Scroll Down Link (Right Bottom)
+================================== */
+.scroll__down {
+  position: absolute;
+  right: -2rem;
+  bottom: 2rem;
+  transform: rotate(90deg);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-light);
+  transition: color 0.3s ease;
+  z-index: 2;
+}
+
+.scroll__down:hover {
+  color: var(--color-primary);
+}
+
+/* ================================
+   OPERATIONS THEME (Clean Professional)
+================================== */
+body.operations .highlight {
+  color: #ff9500;
+  font-weight: 600;
+  /* Clean, professional styling - no animations */
+}
+
+/* ================================
+   TECHNICAL THEME (Electric QA Theme with Subtle Dynamic Glow)
+================================== */
+body.technical .highlight {
+  /* Electric QA theme - Purple to Electric Blue to Cyan */
+  background: linear-gradient(90deg, #a855f7, #3b82f6, #06b6d4, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  /* Brighter fallback for better visibility */
+  color: #a855f7;
+  font-weight: 700;
+  
+  /* Subtle dynamic glow - reduced intensity */
+  text-shadow: 
+    0 0 4px rgba(168, 85, 247, 0.3),
+    0 0 8px rgba(59, 130, 246, 0.2),
+    0 0 12px rgba(6, 182, 212, 0.15);
+  
+  filter: none;
+  animation: subtleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes subtleGlow {
+  0% { 
+    /* Minimal glow - text clearly visible */
+    text-shadow: 
+      0 0 4px rgba(168, 85, 247, 0.3),
+      0 0 8px rgba(59, 130, 246, 0.2),
+      0 0 12px rgba(6, 182, 212, 0.15);
+  }
+  100% { 
+    /* Slightly brighter but not overwhelming */
+    text-shadow: 
+      0 0 6px rgba(168, 85, 247, 0.5),
+      0 0 12px rgba(59, 130, 246, 0.3),
+      0 0 18px rgba(6, 182, 212, 0.25);
+  }
+}
+
+/* ================================
+   Buttons Group
+================================== */
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   Responsive Adjustments - Reduced Spacing
+================================== */
+@media screen and (max-width: 768px) {
+  .hero-container {
+    padding: 0.8rem 1rem 1.5rem;
+    margin-top: -3rem;
+    padding-top: 3.5rem;
+    min-height: 65vh;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .type-animation {
+    margin: 1.2rem 0 0.8rem 0;
+  }
+
+  .hero-img {
+    width: 16rem;
+    height: 22rem;
+  }
+
+  .hero-buttons {
+    margin-top: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .scroll__down,
+  .header__socials {
+    display: none;
+  }
+
+  .hero-container {
+    padding: 0.5rem 0.5rem 1.5rem;
+    margin-top: -2rem;
+    padding-top: 3rem;
+    min-height: 55vh;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
+    margin-top: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .type-animation {
+    margin: 1rem 0 0.6rem 0;
+  }
+
+  h1 {
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* ================================
+   Reduced Motion Preferences
+================================== */
+@media (prefers-reduced-motion: reduce) {
+  body.technical .highlight {
+    animation: none;
+    /* Keep minimal static glow for accessibility */
+    text-shadow: 
+      0 0 5px rgba(168, 85, 247, 0.4),
+      0 0 10px rgba(59, 130, 246, 0.25),
+      0 0 15px rgba(6, 182, 212, 0.2);
+  }
+}

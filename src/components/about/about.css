@@ -1,0 +1,272 @@
+/* About Section Styling - Improved Layout */
+
+#about {
+  padding: 5rem 0;
+}
+
+.about__container {
+  display: grid;
+  grid-template-columns: 35% 50%;
+  gap: 15%;
+  align-items: start;
+}
+
+/* Left side container for photo and quote */
+.about__left {
+  display: flex;
+  flex-direction: column;
+  gap:7rem;
+}
+
+.about__me {
+  width: 100%;
+  aspect-ratio: 1/1.2;
+  border-radius: 2rem;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    var(--color-primary),
+    transparent
+  );
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.about__me-image {
+  border-radius: 2rem;
+  overflow: hidden;
+  transform: rotate(10deg);
+  transition: var(--transition);
+  height: fit-content;
+}
+
+.about__me-image:hover {
+  transform: rotate(0deg);
+}
+
+.about__me-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Quote Section - Separate below photo */
+.about__quote {
+  background: var(--color-bg-variant);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid var(--color-primary-variant);
+  position: relative;
+  overflow: hidden;
+}
+
+.about__quote::before {
+  content: '"';
+  position: absolute;
+  top: -5px;
+  left: 15px;
+  font-size: 3rem;
+  color: var(--color-primary);
+  font-family: Georgia, serif;
+  opacity: 0.3;
+}
+
+.about__quote::after {
+  content: '"';
+  position: absolute;
+  bottom: -20px;
+  right: 15px;
+  font-size: 3rem;
+  color: var(--color-primary);
+  font-family: Georgia, serif;
+  opacity: 0.3;
+}
+
+.quote__text {
+  font-style: italic;
+  color: var(--color-light);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.about__card {
+  background: var(--color-bg-variant);
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.about__card:hover {
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  transform: translateY(-0.5rem);
+}
+
+.about__icon {
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.about__card h5 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.about__card small {
+  font-size: 0.7rem;
+  color: var(--color-light);
+  line-height: 1.2;
+}
+
+.about__content p {
+  margin-bottom: 1rem;
+  color: var(--color-light);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.about__content .btn {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+/* Education Section */
+.education__section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.education__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.education__item {
+  background: var(--color-bg-variant);
+  padding: 2rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.education__item:hover {
+  background: transparent;
+  border-color: var(--color-primary-variant);
+}
+
+.education__item h3 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.education__item p {
+  color: var(--color-light);
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .about__left {
+    width: 50%;
+    margin: 0 auto 2rem;
+  }
+  
+  .about__content {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about__left {
+    width: 65%;
+    margin: 0 auto 2rem;
+  }
+  
+  .about__cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .about__card {
+    padding: 1rem;
+  }
+  
+  .about__content p {
+    text-align: left;
+  }
+  
+  .about__quote {
+    padding: 1.2rem;
+  }
+  
+  .quote__text {
+    font-size: 0.85rem;
+  }
+  
+  .about__quote::before,
+  .about__quote::after {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about__left {
+    width: 80%;
+  }
+  
+  .about__cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .education__container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .education__item {
+    padding: 1.5rem;
+  }
+  
+  .about__quote {
+    padding: 1rem;
+  }
+  
+  .quote__text {
+    font-size: 0.8rem;
+  }
+}
