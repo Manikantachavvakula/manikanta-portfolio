@@ -26,7 +26,7 @@ const Portfolio = () => {
       category: 'web',
       technologies: ['Flask', 'Python Cryptography', 'HTML5', 'CSS3', 'JavaScript'],
       github: 'https://github.com/Manikantachavvakula/text-encrypter',
-      demo: 'https://text-encrypter.railway.app',
+      demo: 'https://text-encrypter-production.up.railway.app/',
       status: 'Live',
       featured: true,
       impact: 'AES + SHA-256 + DSA visualization',
