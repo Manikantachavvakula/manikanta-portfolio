@@ -108,8 +108,7 @@ const Experience = () => {
                 'Collaborated across three teams to support requirements and triage escalations, coordinating fixes and keeping resolutions within SLAs.',
                 'Mentored new hires through day-long shadowing sessions, helping them quickly adapt to workflows and tools.',
                 'Led process improvement projects, streamlining workflows and saving time for stakeholders.',
-                'Managed operations and reporting with AWS QuickSight, improving stakeholder decisions.',
-                'Received ‘Reward & Recognition’ (Best Performer) three times for delivering consistent results and maintaining high accuracy'
+                'Managed operations and reporting with AWS QuickSight, improving stakeholder decisions.'
               ]
             },
             
