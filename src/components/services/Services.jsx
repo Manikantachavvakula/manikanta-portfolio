@@ -72,8 +72,7 @@ const Services = () => {
       id: 1,
       icon: <BsTrophy />,
       title: 'Best Performer – Amazon',
-      description: 'For resolving 100+ escalations monthly and consistently performing above expectations.',
-      year: '2024',
+      description: 'For earning Reward & Recognition (Best Performer) three times for accuracy, reliability, and consistent results.',
       type: 'award'
     },
     {

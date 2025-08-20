@@ -104,11 +104,12 @@ const Experience = () => {
               date: 'Oct 2023 – Jun 2025',
               location: 'Hyderabad, India',
               points: [
-                'Served as primary POC for SCS/MCS teams, resolving 100+ escalations monthly within strict SLAs.',
-                'Acted as SME, training new hires and conducting knowledge transfers to improve team efficiency.',
+                'Owned end-to-end responsibility for daily operations, ensuring smooth workflows and timely stakeholder communication.',
+                'Collaborated across three teams to support requirements and triage escalations, coordinating fixes and keeping resolutions within SLAs.',
+                'Mentored new hires through day-long shadowing sessions, helping them quickly adapt to workflows and tools.',
                 'Led process improvement projects, streamlining workflows and saving time for stakeholders.',
                 'Managed operations and reporting with AWS QuickSight, improving stakeholder decisions.',
-                'Achieved Best Performer recognition for consistently performing above expectations.'
+                'Received ‘Reward & Recognition’ (Best Performer) three times for delivering consistent results and maintaining high accuracy'
               ]
             },
             
