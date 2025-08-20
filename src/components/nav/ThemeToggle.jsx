@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 const ThemeToggle = () => {
-  // Start in 'operations' mode (Amazon-inspired theme)
-  const [theme, setTheme] = useState('operations');
+  // Start in 'technical' mode (Purple QA/Testing theme) - CHANGED FROM 'operations'
+  const [theme, setTheme] = useState('technical');
 
   // Apply the theme class to the body when component mounts and when theme changes
   useEffect(() => {
@@ -10,16 +10,16 @@ const ThemeToggle = () => {
     document.body.className = theme;
   }, [theme]);
 
-  // Set initial theme on component mount
+  // Set initial theme on component mount - CHANGED TO 'technical'
   useEffect(() => {
-    console.log('ThemeToggle mounted, setting initial theme');
-    document.body.className = 'operations';
-    setTheme('operations');
+    console.log('ThemeToggle mounted, setting initial theme to technical');
+    document.body.className = 'technical';
+    setTheme('technical');
   }, []);
 
-  // Toggle between operations and technical
+  // Toggle between technical and operations
   const toggleTheme = () => {
-    const newTheme = theme === 'operations' ? 'technical' : 'operations';
+    const newTheme = theme === 'technical' ? 'operations' : 'technical';
     console.log('Toggling from', theme, 'to', newTheme);
     setTheme(newTheme);
   };
@@ -37,7 +37,7 @@ const ThemeToggle = () => {
         padding: '0.5rem 1rem'
       }}
     >
-      {theme === 'operations' ? '🔧 Technical Mode' : '⚙️ Operations Mode'}
+      {theme === 'technical' ? '⚙️ Operations Mode' : '🔧 Technical Mode'}
     </button>
   );
 };

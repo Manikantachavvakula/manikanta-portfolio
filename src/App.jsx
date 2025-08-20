@@ -170,38 +170,48 @@ const LazySection = React.memo(({ children, fallback, threshold = 0.1, sectionNa
 });
 
 const App = () => {
-  React.useEffect(() => {
-    // Set initial theme before anything else
-    if (!document.body.className) {
-      document.body.className = 'technical';
-      console.log('App: Set initial theme to technical');
-    }
-    
-    // Add skip link for accessibility
-    const skipLink = document.createElement('a');
-    skipLink.href = '#main-content';
-    skipLink.className = 'skip-link';
-    skipLink.textContent = 'Skip to main content';
-    skipLink.setAttribute('aria-label', 'Skip to main content');
-    document.body.insertBefore(skipLink, document.body.firstChild);
+// Find this useEffect in your App.jsx file and replace it with this updated version:
 
-    // Performance monitoring (only in development)
-    if (process.env.NODE_ENV === 'development' && 'performance' in window) {
-      window.addEventListener('load', () => {
-        const perfData = performance.getEntriesByType('navigation')[0];
-        console.log('Performance metrics:', {
-          loadTime: Math.round(perfData.loadEventEnd - perfData.loadEventStart),
-          domContentLoaded: Math.round(perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart),
-          totalTime: Math.round(perfData.loadEventEnd - perfData.fetchStart)
-        });
+React.useEffect(() => {
+  // ALWAYS set technical theme as default - ignore any previous preferences
+  document.body.className = 'technical';
+  console.log('App: Set theme to technical (always default)');
+  
+  // Clear any theme preferences from localStorage to prevent override
+  try {
+    localStorage.removeItem('theme');
+    localStorage.removeItem('selectedTheme');
+    localStorage.removeItem('themePreference');
+  } catch (error) {
+    // Handle cases where localStorage is not available
+    console.log('Could not clear localStorage theme preferences');
+  }
+  
+  // Add skip link for accessibility
+  const skipLink = document.createElement('a');
+  skipLink.href = '#main-content';
+  skipLink.className = 'skip-link';
+  skipLink.textContent = 'Skip to main content';
+  skipLink.setAttribute('aria-label', 'Skip to main content');
+  document.body.insertBefore(skipLink, document.body.firstChild);
+
+  // Performance monitoring (only in development)
+  if (process.env.NODE_ENV === 'development' && 'performance' in window) {
+    window.addEventListener('load', () => {
+      const perfData = performance.getEntriesByType('navigation')[0];
+      console.log('Performance metrics:', {
+        loadTime: Math.round(perfData.loadEventEnd - perfData.loadEventStart),
+        domContentLoaded: Math.round(perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart),
+        totalTime: Math.round(perfData.loadEventEnd - perfData.fetchStart)
       });
-    }
+    });
+  }
 
-    // Cleanup function
-    return () => {
-      // Any cleanup if needed
-    };
-  }, []);
+  // Cleanup function
+  return () => {
+    // Any cleanup if needed
+  };
+}, []);
 
   const floatingLinks = React.useMemo(() => [
     {
